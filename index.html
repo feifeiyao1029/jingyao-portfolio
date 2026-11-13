@@ -122,6 +122,65 @@
             transform: translateY(-6px); background: #FFFBF5;
             border-color: #C84E31; box-shadow: 0 12px 20px rgba(200, 78, 49, 0.1);
         }
+        /* --- 场景设计画廊专属样式 --- */
+        .scene-gallery-main {
+            width: 100%;
+            background: #F7F5F0;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 24px;
+            text-align: center;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .scene-gallery-main img {
+            max-width: 100%;
+            max-height: 550px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: opacity 0.3s ease;
+        }
+        .scene-gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 16px;
+        }
+        .scene-thumb {
+            background: #FFF;
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        .scene-thumb img {
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .scene-thumb span {
+            font-size: 0.85rem;
+            color: #5B5B6E;
+            font-weight: 500;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .scene-thumb:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+        .scene-thumb.active {
+            border-color: #C84E31;
+            box-shadow: 0 4px 12px rgba(200, 78, 49, 0.1);
+        }
+        .scene-thumb.active span {
+            color: #C84E31;
+        }
     </style>
 </head>
 <body>
@@ -445,52 +504,53 @@
     </div>
 </div>
 
-            <!-- 8. 场景设计 · 二维 -->
-<div class="portfolio-category">
-    <h3><i class="fas fa-tree"></i> 场景设计</h3>
+            <!-- 8. 场景设计 · 二维交互画廊 -->
+            <div class="portfolio-category">
+                <h3><i class="fas fa-tree"></i> 场景设计</h3>
+                
+                           <!-- 8. 场景设计 · 二维交互画廊 -->
+            <div class="portfolio-category">
+                <h3><i class="fas fa-tree"></i> 场景设计</h3>
+                
+                <!-- 大图展示区 -->
+                <div class="scene-gallery-main">
+                    <img id="mainSceneImage" src="场景设计1.JPG" alt="场景设计大图">
+                </div>
 
-    <!-- 大图预览区 -->
-    <div style="background:#F7F5F0; border-radius:28px; padding:20px; margin-bottom:24px; text-align:center;">
-        <img id="sceneMainImg" src="场景设计1.JPG" alt="场景设计预览"
-             style="width:100%; max-height:520px; object-fit:contain; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08); transition:opacity 0.25s ease;">
-    </div>
-
-    <!-- 缩略图 -->
-    <div class="grid-3" id="sceneThumbs">
-        <div class="card scene-thumb" data-src="场景设计1.JPG" style="cursor:pointer; padding:12px;">
-            <img src="场景设计1.JPG" alt="水母化共生空间" style="width:100%; border-radius:16px; margin-bottom:10px;">
-            <h4>水母化共生空间</h4>
-            <p>以水母为大型体设计的共生空间，梦幻漂浮的生态场景。</p>
-        </div>
-        <div class="card scene-thumb" data-src="场景设计2.PNG" style="cursor:pointer; padding:12px;">
-            <img src="场景设计2.PNG" alt="金色叶浪" style="width:100%; border-radius:16px; margin-bottom:10px;">
-            <h4>金色叶浪</h4>
-            <p>参考深海海报创作，温馨的金色叶浪，光影柔和富有诗意。</p>
-        </div>
-        <div class="card scene-thumb" data-src="场景设计3.PNG" style="cursor:pointer; padding:12px;">
-            <img src="场景设计3.PNG" alt="白蛇·竹林妖境" style="width:100%; border-radius:16px; margin-bottom:10px;">
-            <h4>白蛇·竹林妖境</h4>
-            <p>两条白蛇和一位蛇妖，绿色竹林营造神秘幽静氛围。</p>
-        </div>
-        <!-- 下面 3 张是新增的，文件名改成你实际的 -->
-        <div class="card scene-thumb" data-src="场景设计4.png" style="cursor:pointer; padding:12px;">
-            <img src="场景设计4.png" alt="场景设计4" style="width:100%; border-radius:16px; margin-bottom:10px;">
-            <h4>赤焰之海 </h4>
-            <p>暗夜下的波涛与滔天烈焰碰撞。</p>
-        </div>
-        <div class="card scene-thumb" data-src="场景设计5.png" style="cursor:pointer; padding:12px;">
-            <img src="场景设计5.png" alt="场景设计5" style="width:100%; border-radius:16px; margin-bottom:10px;">
-            <h4>破浪之鲸</h4>
-            <p>海面倾泻的耀眼白光与鲸鱼身上的流动光斑交织。</p>
-        </div>
-        <div class="card scene-thumb" data-src="场景设计6.png" style="cursor:pointer; padding:12px;">
-            <img src="场景设计6.png" alt="场景设计6" style="width:100%; border-radius:16px; margin-bottom:10px;">
-            <h4>海底遗迹</h4>
-            <p>神圣的丁达尔光束穿透水面，成群的游鱼环绕着沉睡的沉船遗迹。</p>
-
-     </div>
-
-
+                <!-- 缩略图切换区 -->
+                <div class="scene-gallery-thumbs">
+                    <!-- 1 -->
+                    <div class="scene-thumb active" data-src="场景设计1.JPG">
+                        <img src="场景设计1.JPG" alt="水母化共生空间">
+                        <span>水母化共生空间</span>
+                    </div>
+                    <!-- 2 -->
+                    <div class="scene-thumb" data-src="场景设计2.PNG">
+                        <img src="场景设计2.PNG" alt="金色叶浪">
+                        <span>金色叶浪</span>
+                    </div>
+                    <!-- 3 -->
+                    <div class="scene-thumb" data-src="场景设计3.PNG">
+                        <img src="场景设计3.PNG" alt="白蛇·竹林妖境">
+                        <span>白蛇·竹林妖境</span>
+                    </div>
+                    <!-- 4 -->
+                    <div class="scene-thumb" data-src="场景设计4.png">
+                        <img src="场景设计4.png" alt="赤焰之海">
+                        <span>赤焰之海</span>
+                    </div>
+                    <!-- 5 -->
+                    <div class="scene-thumb" data-src="场景设计5.png">
+                        <img src="场景设计5.png" alt="浮光之鲸">
+                        <span>浮光之鲸</span>
+                    </div>
+                    <!-- 6 -->
+                    <div class="scene-thumb" data-src="场景设计6.png">
+                        <img src="场景设计6.png" alt="海底遗迹">
+                        <span>海底遗迹</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- 9. 场景设计作品 · 三维 -->
             <div class="portfolio-category">
@@ -623,6 +683,33 @@
         });
     })();
 </script>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const mainImg = document.getElementById('mainSceneImage');
+        const thumbs = document.querySelectorAll('.scene-thumb');
+        
+        if (mainImg && thumbs.length > 0) {
+            thumbs.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // 1. 移除所有缩略图的高亮状态
+                    thumbs.forEach(t => t.classList.remove('active'));
+                    // 2. 给当前点击的缩略图加上高亮
+                    this.classList.add('active');
+                    
+                    // 3. 切换大图，带淡入淡出效果
+                    const newSrc = this.getAttribute('data-src');
+                    mainImg.style.opacity = '0.3';
+                    
+                    setTimeout(() => {
+                        mainImg.src = newSrc;
+                        mainImg.style.opacity = '1';
+                    }, 200);
+                });
+            });
+        }
+    });
+</script>
+</body>
+</html>
 </body>
 </html>
